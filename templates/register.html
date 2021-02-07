@@ -1,0 +1,40 @@
+{% extends 'shared/base.html' %}
+{% block site_body %}
+    <form class="register" method="post" action="{% url 'register' %}">
+        {% csrf_token %}
+        <div>
+            <label>Username: </label>
+            {{ form.username }}
+        </div>
+        <div>
+            <label>Password: </label>
+            {{ form.password1 }}
+        </div>
+        <div>
+            <label>
+                Confirm Password:
+            </label>
+
+            {{ form.password2 }}
+        </div>
+        {{ form.errors }}
+        <div>
+            <label>
+                Phone number:
+            </label>
+            {{ profile_form.phone_number }}
+
+        </div>
+        <div>
+            <label>
+                Region:
+            </label>
+            {{ profile_form.region }}
+        </div>
+        {{ profile_form.errors }}
+        <button>
+            Register
+        </button>
+        or <a href="{% url 'login' %}">Login</a>
+    </form>
+{% endblock %}

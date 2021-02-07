@@ -1,0 +1,19 @@
+{% extends 'shared/base.html' %}
+
+{% block site_body %}
+    <div class="reports-div">
+    <ol>
+    {% for report in reports %}
+        <li>
+        Added By : <a href="{% url 'profile' report.added_by.user.id %}">{{ report.added_by.user.username }}</a>
+            <br>
+        Ad : <a href="{% url 'show car' report.car.id %}">{{ report.car.brand }}</a>
+            <br>
+        Massage : {{ report.massage }}
+            <br>
+            <a class="remove-report-btn" href="{% url 'remove report' report.id %}">Remove</a>
+        </li>
+    {% endfor %}
+    </ol>
+    </div>
+{% endblock %}

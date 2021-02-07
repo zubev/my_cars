@@ -1,0 +1,33 @@
+{% extends 'shared/base.html' %}
+
+{% block site_body %}
+    <h1>Hello {{ profile.user.username }}!</h1>
+    {% if cars %}
+    <h2>Your adds: </h2>
+    {% for car in cars %}
+        <div class="car-div">
+
+            <a href="{% url 'show car' car.id %}" class="wrapper">
+                <img src="{{ car.image.url }}" width="150" class="main-picture">
+
+                <div class="first-info">
+                    <h6>          {{ car.horse_power }}кс
+                        {{ car.year }},
+                        {{ car.fuel }},
+                        {{ car.where }}</h6>
+
+                </div>
+
+                <div class="second-info">
+                    <h5>{{ car.brand }} {{ car.model }} {{ car.fuel }}</h5>
+                </div>
+                <div class="price">
+                    <h2>{{ car.price }}$</h2>
+                </div>
+            </a>
+        </div>
+    {% endfor %}
+        {% else %}
+        <h2>No adds:</h2>
+    {% endif %}
+{% endblock %}

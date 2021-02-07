@@ -1,0 +1,51 @@
+{% extends 'shared/base.html' %}
+{% block site_body %}
+
+    <form action="{% url 'add car' %}" method="post" enctype="multipart/form-data" class="create-car-form">
+        {% csrf_token %}
+        <h1>Create your аnnouncement :</h1>
+        <div>
+            <label>Body style: </label>
+            {{ form.body_style }}
+        </div>
+        <div>
+            <label>Brand: </label>
+            {{ form.brand }}
+        </div>
+                <div>
+            <label>Model: </label>
+            {{ form.model }}
+        </div>
+        <div>
+            <label>Image: </label>
+            {{ form.image }}
+        </div>
+        <div>
+            <label>Fuel: </label>
+            {{ form.fuel }}
+        </div>
+        <div>
+            <label>Price: </label>
+            {{ form.price }}
+        </div>
+        <div>
+            <label>Year: </label>
+            {{ form.year }}
+        </div>
+        <div>
+            <label>Horse power: </label>
+            {{ form.horse_power }}
+        </div>
+        <div>
+            <label>Condition: </label>
+            {{ form.condition }}
+        </div>
+        <div>
+            <label>Description: </label>
+            {{ form.description }}
+        </div>
+        {{ form.errors }}
+        <button>Create</button>
+    </form>
+    <script src="../static/scripts/show_models2.js"></script>
+{% endblock %}

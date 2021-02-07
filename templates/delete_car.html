@@ -1,0 +1,14 @@
+{% extends 'shared/base.html' %}
+{% block site_body %}
+    <form method="post">
+        {% csrf_token %}
+        <div>
+            <h1>Аre you sure you want to delete the ad?</h1>
+            <img src="{{ car.image.url }}">
+        </div>
+
+        <button>Yes</button>
+        <a href="{% url 'index' %}">No. Back to index</a>
+    </form>
+
+{% endblock %}

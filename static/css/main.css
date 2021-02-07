@@ -1,0 +1,197 @@
+@import url('https://use.fontawesome.com/releases/v5.15.1/css/all.css');
+
+body {
+    background: rgb(238, 238, 238);
+}
+
+.car-div {
+    background: white;
+    width: 280px;
+    height: 360px;
+    display: inline-block;
+    margin-right: 15px;
+    margin-top: 15px;
+    border: solid rgba(240, 240, 240, 30) .1px;
+    border-radius: 12px;
+    -webkit-box-shadow: -2px 5px 14px 3px rgba(0, 0, 0, 0.62);
+    box-shadow: -2px 5px 14px 3px rgba(0, 0, 0, 0.62);
+    max-width: 281px;
+    max-height: 361px;
+
+}
+
+.car-div a:hover {
+    color: black;
+}
+
+.main-picture {
+    padding-top: 25px;
+    width: 100%;
+    height: 170px;
+
+}
+
+
+
+.first-info {
+    border-bottom: solid rgba(0, 0, 0, 0.1) .3px;
+    margin: 10px;
+    padding: 5px 15px;
+}
+
+.second-info {
+    padding: 15px;
+}
+
+.price {
+    position: absolute;
+    border: solid rgba(0, 0, 0, 0.1) 1px;
+    border-radius: 15%;
+    padding: 5px;
+    padding-right: 40px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.1);
+    margin-left: 10px;
+}
+
+.section {
+    margin: 50px 260px;
+    position: relative;
+}
+
+.car-info {
+    padding-top: 55px;
+    padding-left: 20px;
+}
+
+.show-car-picture {
+    display: inline-block;
+    height: 400px;
+
+}
+
+#wallpaper {
+    width: 100%;
+    height: 400px;
+
+}
+
+#filter * {
+    margin: 20px 5px;
+
+}
+
+#filter {
+    font-size: 22px;
+    border-top: solid rgba(0, 0, 0, 0.4) .5px;
+    margin-top: 45px;
+    margin-bottom: 10px;
+}
+
+.filter-btn {
+    background: #333;
+    color: white;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 12px;
+    margin: 4px;
+}
+
+.filter-btn:hover {
+    background: white;
+    color: #333;
+}
+
+
+.create-car-form {
+    background: white;
+    margin: 100px 300px;
+    border: solid #333 .5px;
+
+}
+
+.create-car-form * {
+    margin: 10px;
+    font-size: 20px;
+}
+
+.create-car-form div {
+    text-align: center;
+    border: solid #dddddd .5px;
+}
+
+.create-car-form h1 {
+    font-size: 25px;
+    text-align: center;
+}
+
+.car-price {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+
+.main {
+    padding: 8px;
+    margin-top: 36px;
+}
+
+.section header {
+    margin: 50px 0;
+}
+
+.car-image img {
+    width: 100%;
+    display: inline-block;
+}
+
+.car-image {
+    width: 500px;
+    display: inline-block;
+}
+
+.car-description {
+    word-break: break-all;
+
+}
+
+
+.register div{
+    margin: 20px;
+}
+.register{
+    margin: 100px auto;
+    border: solid black 1px;
+    width: 400px;
+    
+}
+
+#login{
+    border: solid rgba(0,0,0,.3) .2px;
+    margin: 100px auto;
+    width: 300px;
+    padding: 30px;
+}
+
+#login div{
+    margin: 10px;
+}
+
+
+#report-form{
+    display: none;
+}
+
+.reports-div{
+    margin: 100px 200px;
+    border: #333333 solid 2px;
+}
+
+.reports-div li {
+    margin: 20px;
+    border: #333333 solid .3px;
+}
+
+.remove-report-btn{
+    color: red;
+}

@@ -1,0 +1,64 @@
+{% extends 'shared/base.html' %}
+
+{% block site_body %}
+    <div class="section">
+        <header>
+            <h1>{{ car.brand }} {{ car.model }}</h1>
+            <div class="price car-price">
+                {{ car.price }}$
+            </div>
+        </header>
+        <main>
+            <div class="1-info">
+                {{ car.year }} {{ car.body_style }} Condition: {{ car.condition }},
+                {{ car.fuel }}, Horse Power:{{ car.horse_power }}
+
+            </div>
+            <div class="car-image">
+                <img src="{{ car.image.url }}">
+            </div>
+            <h4>
+                Description:
+            </h4>
+            <div class="car-description">
+                {{ car.description }}
+            </div>
+            <br>
+            <div>
+                <h5>Call the seller: </h5>
+                {{ car.user.phone_number }}
+            </div>
+            <br>
+            {% if not can_delete %}
+                <div>
+                    <a href="{% url 'profile' car.user.user.id %}"><h5>all ads of {{ car.user.user.username }}</h5></a>
+                </div>
+            {% endif %}
+        </main>
+        {% if can_delete %}
+            <div>
+                <a href="{% url 'delete car' car.id %}">
+                    <button>Delete</button>
+                </a>
+                <a href="{% url 'edit car' car.id %}">
+                    <button>Edit</button>
+                </a>
+            </div>
+        {% endif %}
+    {% if user.is_authenticated %}
+     {% if not can_delete %}
+        <a id="report-icon">Report:<i class="fas fa-exclamation"></i></a>
+
+
+        <form id="report-form" method="post">
+            {% csrf_token %}
+            {{ report_form }}
+            <button id="report-form-btn">Submit</button>
+        </form>
+        {% endif %}
+    {% endif %}
+    </div>
+    <script src="../static/scripts/show_report_form.js">
+    </script>
+
+{% endblock %}

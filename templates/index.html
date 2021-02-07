@@ -1,0 +1,40 @@
+{% extends 'shared/base.html' %}
+{#{% block site_head %}#}
+{#    <script src="../static/scripts/show_models.js"></script>#}
+{#{% endblock %}#}
+{% block site_body %}
+
+    <form action="{% url 'index' %}" method="get" id="filter">
+    {{ filter_form }}
+        {% csrf_token %}
+    <button class="filter-btn">Filter</button>
+    </form>
+    {% for car in cars %}
+        <div class="car-div">
+
+            <a href="{% url 'show car' car.id %}" class="wrapper">
+                <img src="{{ car.image.url }}" width="150" class="main-picture">
+
+                <div class="first-info">
+                    <h6>          {{ car.horse_power }}кс
+                        {{ car.year }},
+                        {{ car.user.region }},
+                        {{ car.where }}</h6>
+
+                </div>
+
+                <div class="second-info">
+                    <h5>{{ car.brand }} {{ car.model }} {{ car.fuel }}</h5>
+                </div>
+                            <div class="price">
+                    <h2>{{ car.price }}$</h2>
+                </div>
+            </a>
+        </div>
+    {% endfor %}
+    <script src="../static/scripts/show_models.js">
+
+    </script>
+    <script src="../static/scripts/demo.js"></script>
+
+{% endblock %}
